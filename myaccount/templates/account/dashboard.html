@@ -60,31 +60,35 @@
         </div>
             <hr style="border-bottom: 15px solid;">
        
+    <div style="font-size: xx-large; font-weight: bolder; color: white; " class="all">
+                <hr>
+                <hr>
+                <hr>
+                <h3 style="font-weight: bolder; color: white; font-size: 30px;">Tulis Komentar</h3>
+                <hr>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                <table style="font-size: 20px; margin-right: 10px;">
+                    {{post_form.as_table}}
+                </table>
+                <button style="margin-left: 415px;" class="btn btn-outline-light" type="submit">Kirim</button>
+            </form>
 
-    </div>
-    <div style="font-size: small; font-weight: normal; table-color: white; color: white;" class="all">
-        <hr>
-        <hr>
-        <hr>
-        <h3 style="font-weight: bolder; color: rgb(245, 245, 245);">{{page_title}}</h3>
-        <form method="POST"action="">
-            {% csrf_token %}
-        <table> 
-            {{post_form.as_table}}
-        </table>
-        <button style="margin-left: 250px;" class="btn btn-primary" type="submit">Kirim</button>
-    </form>
-    <div class="dropdown-divider"></div>
+
+            </div>
+
+            <h1 style="color: white; font-size: 30px;">{{page_title}}</h1>
+            <hr>
+            <hr>
+            {% for post in posts %}
+            <h1 style="color: black; font-size: 20px; border: 1px solid white; background-color: white;">{{post.Nama}}</h1>
+            <p style="color: white; font-size: 15px;">{{post.Komentar}}</p>
+            <hr>
+            <hr>
+            {% endfor %}
+
     
-    </div>
-    <div>
-        <h3 style="color: white;">Semua Komentar</h3>
-        {% for post in posts %}
-        <h1 style="color: white;">{{post.Nama}}</h1>
-        <hr>
-        <p style = "color: white; font-size: 15px;">{{post.Komentar}}</p>
-        {% endfor %}
-    </div>
 </body>
 </html>
 {% endblock %}
