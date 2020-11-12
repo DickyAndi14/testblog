@@ -12,8 +12,10 @@ def home(request):
     posts = PostModel.objects.all()
  
     context = {
-    'page_title':'Tulis Komentar',
+    'pics:pics,
     'post_form':post_form,
+    'page_title':'Semua Komentar',
+    'posts':posts,
 
     }
 
