@@ -1,1 +1,1 @@
-web:gunicorn blogsaya.wsgi 
+web:gunicorn myblog1.wsgi 
