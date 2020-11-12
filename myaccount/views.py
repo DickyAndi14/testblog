@@ -7,30 +7,31 @@ from .forms import PostForm
 # Create your views here.
 
 def home(request):
-    pics=Image.objects.all()
-    post_form = PostForm()
     posts = PostModel.objects.all()
- 
-    context = {
-    'page_title':'Tulis Komentar',
-    'posts':posts,
+    post_form = PostForm()
+    pics=Image.objects.all()
 
-    }
+    context = {
+        'pics':pics,
+        'post_form':post_form,
+        'page_title':'All Comments',
+        'posts':posts,
+        }
 
     if request.method == 'POST':
         PostModel.objects.create(
-        Nama = request.POST['Nama'],
-        Komentar = request.POST['Komentar'],
-    )
+            Nama = request.POST['Nama'],
+            Komentar = request.POST['Komentar'],
+            )
 
     pics = ImageFilter(
         request.GET,
-        queryset=Image.objects.all()
+        queryset = Image.objects.all()
     )
 
     context['pics'] = pics
 
-    return render(request, 'account/dashboard.html', context=context)  
+    return render(request, 'account/dashboard.html', context=context) 
 
 def posting(request):
     return render(request, 'account/posting.html')
