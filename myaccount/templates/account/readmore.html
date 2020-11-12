@@ -1,0 +1,60 @@
+{% extends 'account/main.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P</title>
+     <style>
+        .header{
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    
+    <br>
+    <br>
+   <br>
+   <br>
+    <!-- <form class="search" method="get" style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: black;">
+    {{ pics.form.nama }}
+    <button class="btn btn-primary" type="submit">Search</button>
+    </form> -->
+    <div class="header">Gitar-Gitar Terbaik
+        <hr>
+    </div>
+    <div class="" style="text-align: center; color: white;">
+        {% for x in pics.qs %}
+        <div>
+        
+            <img src="{{x.image.url}}" alt="..." class="img-thumbnail" width="350px">
+            
+            <p style="font-weight:bolder;">{{x.nama}}</p>
+            <p>{{x.deskripsi}}</p>
+            
+        </div>
+            <hr style="border-bottom: 15px solid;"> 
+
+
+        {% endfor %}
+
+       
+
+    </div>
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+

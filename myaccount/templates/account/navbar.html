@@ -1,0 +1,40 @@
+{% load static %} 
+
+
+<nav style = 'position: fixed; width: 100%; top: 0cm; z-index: 10;' class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="{% static 'images/logo.jpg' %}">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Beranda <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Kategori
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/cate/?Category=Gitar+Elektrik">Gitar Elektrik</a>
+          <a class="dropdown-item" href="/cate/?Category=Gitar+Akustik">Gitar Acoustic</a>
+          <a class="dropdown-item" href="/cate/?Category=Gitar+Classic">Gitar Classic</a>
+        </div>
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+    <a href="https://www.instagram.com/dickyandii_/"><img style="width: 60px;" src="{% static 'images/static/20/instagram.png'%}"></a>
+    <form class="form-inline my-2 my-lg-0"> 
+    </form>
+  </div>
+  
+</nav>
+
+
+
+
+  

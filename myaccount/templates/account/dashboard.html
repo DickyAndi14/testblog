@@ -1,0 +1,90 @@
+{% extends 'account/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <h2 style="text-align: center; color: white;">Gitar Gitar Terbaik</h2>
+    <div class="" style="text-align: center; color: white;">
+       
+        <div>
+            <hr>
+            <img src="{% static 'images/static/20/Gibson Les Paul Standar.png'%}" alt="..." class="img-thumbnail" width="350px">
+            <p style="font-weight:bolder;">Gibson Les Paul Standar</p>
+            <p>Gibson Les Paul adalah gitar listrik solid body yang pertama kali dijual oleh Gibson Guitar Corporation pada tahun 1952. Les Paul dirancang oleh presiden Gibson Ted McCarty, manajer pabrik John Huis dan tim mereka dengan masukan dan dukungan dari gitaris Les Paul...</p>
+            <a href="/upload/?nama=Gibson+Les+Paul+Standar"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+        </div>
+            <hr style="border-bottom: 15px solid;">
+        <div>
+            <hr>
+            <img src="{% static 'images/static/20/Classic Guitar Yamaha C70.jpg'%}" alt="..." class="img-thumbnail" width="350px">
+            <p style="font-weight:bolder;">Classic Guitar Yamaha C70</p>
+            <p>Ada beberapa seri gitar klasik berkualitas juara yang bisa kamu coba untuk belajar bermain gitar, seperti Gitar Yamaha C80 dan Gitar Yamaha C70, misalnya. Kedua seri instrumen ini hadir dengan harga yang terjangkau namun....</p>
+            <a href="/upload/?nama=Classic+Guitar+Yamaha+C70"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+        </div>
+            <hr style="border-bottom: 15px solid;">
+        <div>
+            <hr>
+            <img src="{% static 'images/static/20/Accoustic Cort GA_MEDX M.png'%}" alt="..." class="img-thumbnail" width="350px">
+            <p style="font-weight:bolder;">Accoustic Cort GA_MEDX M0</p>
+            <p>Merupakan salah satu terobosan dari cort. Memakai grand auditorium body yang cukup populer karena suara yang dihasilkan,dengan kayu mahogany pada body untuk memberikan kesan lebih warm pad tone akustik gitar ini....</p>
+            <a href="/upload/?nama=Accoustic+Cort+GA_MEDX+M"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+        </div>
+            <hr style="border-bottom: 15px solid;">
+        <div>
+            <hr>
+            <img src="{% static 'images/static/20/Taylor 114e Accoustic Guitar.jpg'%}" alt="..." class="img-thumbnail" width="350px">
+            <p style="font-weight:bolder;">Taylor 114e Accoustic Guitar</p>
+            <p>Merupakan Seri profesional dari Taylor guitar. Cutaway acoustic/electric Grand Auditorium ini memadukan kayu layered walnut di bagian back dan sides dengan solid Sitka spruce di bagian top...</p>
+            <a href="/upload/?nama=Taylor+114e+Accoustic+Guitar"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+        </div>
+            <hr style="border-bottom: 15px solid;">
+        <div>
+            <hr>
+            <img src="{% static 'images/static/20/Squier Gitar Elektrik.jpg'%}" alt="..." class="img-thumbnail" width="350px">
+            <p style="font-weight:bolder;">Squier Gitar Elektrik</p>
+            <p>Squier adalah anak perusahaan dari Fender. Squier diciptakan dengan kelas tersendiri untuk memenuhi kebutuhan gitaris dengan budged yang terbatas. Dengan spesifikasi dan kualitas bahan baku yang cukup baik instrument squier yang cukup menjadi incaran dari banyak gitaris.....</p>
+            <a href="/upload/?nama=Squier+Gitar+Elektrik"><button class="btn btn-primary">Baca Selengkapnya</button></a>
+        </div>
+            <hr style="border-bottom: 15px solid;">
+       
+
+    </div>
+    <div style="font-size: small; font-weight: normal; table-color: white; color: white;" class="all">
+        <hr>
+        <hr>
+        <hr>
+        <h3 style="font-weight: bolder; color: rgb(245, 245, 245);">{{page_title}}</h3>
+        <form method="POST"action="">
+            {% csrf_token %}
+        <table> 
+            {{post_form.as_table}}
+        </table>
+        <button style="margin-left: 250px;" class="btn btn-primary" type="submit">Kirim</button>
+    </form>
+    <div class="dropdown-divider"></div>
+    
+    </div>
+    <div>
+        <h3 style="color: white;">Semua Komentar</h3>
+        {% for post in posts %}
+        <h1 style="color: white;">{{post.Nama}}</h1>
+        <hr>
+        <p style="color: white;">{{post.Komentar}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}
