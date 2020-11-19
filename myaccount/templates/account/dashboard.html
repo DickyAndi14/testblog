@@ -59,34 +59,35 @@
             <a href="/upload/?nama=Squier+Gitar+Elektrik"><button class="btn btn-primary">Baca Selengkapnya</button></a>
         </div>
             <hr style="border-bottom: 15px solid;">
-     <br> 
-    <div style="font-size: xx-large; font-weight: bolder; color: white; " class="all">
-                <hr>
-                <hr>
-                <hr>
-                <h3 style="font-weight: bolder; color: white; font-size: 30px;">Tulis Komentar</h3>
-                <hr>
-                <hr>
-                <form method="POST">
-                    {% csrf_token %}
-                <table style="font-size: 20px; margin-right: 10px;">
-                    {{post_form.as_table}}
-                </table>
-                <button style="margin-right: 1230;" class="btn btn-outline-light" type="submit">Kirim</button>
-            </form>
+        
+        <br>
+        <div style="font-size: xx-large; font-weight: bolder; color: white; " class="all">
+            <hr>
+            <hr>
+            <hr>
+            <h3 style="font-weight: bolder; color: white; font-size: 30px; ">Tulis Komentar</h3>
+            <hr>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+            <table style="font-size: 20px; margin-right: 20px;">
+                {{post_form.as_table}}
+            </table>
+            <button style="margin-right: 1230px;" class="btn btn-outline-light" type="submit">Kirim</button>
+        </form>
 
 
-            </div>
+        </div>
 
-            <h1 style="color: white; font-size: 30px;">{{page_title}}</h1>
-            <hr>
-            <hr>
-            {% for post in posts %}
-            <h1 style="color: black; font-size: 20px; border: 1px solid white; background-color: white;">{{post.Nama}}</h1>
-            <p style="color: white; font-size: 15px;">{{post.Komentar}}</p>
-            <hr>
-            <hr>
-            {% endfor %}
+        <h1 style="color: white; font-size: 30px;">{{page_title}}</h1>
+        <hr>
+        <hr>
+        {% for post in posts %}
+        <h1 style="color: black; font-size: 20px; border: 1px solid white; background-color: white;">{{post.Nama}}</h1>
+        <p style="color: white; font-size: 15px;">{{post.Komentar}}</p>
+        <hr>
+        <hr>
+        {% endfor %}
 
     
 </body>
