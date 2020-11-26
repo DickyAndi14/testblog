@@ -15,7 +15,7 @@ class Image(models.Model):
         ('Gitar Classic', 'Gitar Classic'),
         )
     nama = models.CharField(max_length=1000) 
-    deskripsi = models.CharField(max_length=4500)
+    deskripsi = models.TextField(max_length=4500)
     Tags= models.ManyToManyField(Tag)
     Category = models.CharField(max_length= 1000, null=True, choices=CATEGORY)
     image = models.ImageField(upload_to='static/%y')
