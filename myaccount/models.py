@@ -14,6 +14,7 @@ class Image(models.Model):
         ('Gitar Elektrik', 'Gitar Elektrik'),
         ('Gitar Classic', 'Gitar Classic'),
         )
+
     nama = models.TextField(max_length=1000) 
     deskripsi = models.TextField(max_length=3000)
     Tags= models.ManyToManyField(Tag)
