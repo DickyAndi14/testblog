@@ -69,3 +69,31 @@ def cate(request):
     context['pics'] = pics
 
     return render(request, 'account/cate.html', context=context)      
+
+def about(request):
+    pics=Image.objects.all()
+
+    context = {'pics':pics}
+
+    pics = ImageFilter(
+        request.GET,
+        queryset=Image.objects.all()
+    )
+
+    context['pics'] = pics
+
+    return render(request, 'account/about.html', context=context)   
+
+def contact(request):
+    pics=Image.objects.all()
+
+    context = {'pics':pics}
+
+    pics = ImageFilter(
+        request.GET,
+        queryset=Image.objects.all()
+    )
+
+    context['pics'] = pics
+
+    return render(request, 'account/contact.html', context=context)  
